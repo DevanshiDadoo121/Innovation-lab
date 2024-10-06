@@ -48,5 +48,21 @@ accordionItems.forEach(item => {
         }
     });
 });
+    // Accordion functionality
+const accordionItems = document.querySelectorAll('.accordion-item');
+
+accordionItems.forEach(item => {
+    const button = item.querySelector('.accordion-button');
+    button.addEventListener('click', () => {
+        item.classList.toggle('active');
+        const content = item.querySelector('.accordion-content');
+        if (item.classList.contains('active')) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+            content.style.maxHeight = null;
+        }
+    });
+});
+
 
 });
