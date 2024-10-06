@@ -3,108 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PayOffline - Make Payments Anytime</title>
+    <title>KGPay - Secure Offline UPI Payments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <h1>PayOffline</h1>
-            </div>
+        <nav class="navbar">
+            <div class="logo">KGPay</div>
             <ul class="nav-links">
-                <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#features">Features</a></li>
-                <li><a href="#faqs">FAQs</a></li>
-                <li><a href="#download">Download</a></li>
+                <li><a href="#process-flow">How It Works</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
             </ul>
-            <button class="cta-btn header-btn">Get Started</button>
         </nav>
+        <button id="dark-mode-toggle" class="toggle-btn">🌙</button>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-text">
-                <h2>Make Payments Offline, Anytime</h2>
-                <p>Experience the ease of secure, offline transactions with just a tap. No internet? No problem!</p>
-                <button class="cta-btn hero-btn">Download the App</button>
-            </div>
-            <!-- App Mockup -->
-            <div class="hero-animation">
-                <img src="images/app-mockup.jpg" alt="App Mockup" class="app-mockup">
-            </div>
+            <h1>Secure Offline UPI Payments</h1>
+            <p>Make UPI transactions without the need for internet access.</p>
+            <a href="#features" class="cta-btn">Learn More</a>
         </div>
-        <div class="scroll-indicator">Scroll Down</div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
+    <section id="features" class="section">
         <h2>Key Features</h2>
         <div class="feature-cards">
             <div class="card">
-                <h3>Offline Payments</h3>
-                <p>Make payments without any internet connection. Fast and secure at all times.</p>
+                <i class="fas fa-money-check-alt"></i>
+                <h3>Pay</h3>
+                <p>Make payments seamlessly, even without an internet connection.</p>
             </div>
             <div class="card">
-                <h3>Bank-Level Security</h3>
-                <p>Integrated directly with your bank, ensuring the highest level of encryption and security.</p>
+                <i class="fas fa-wallet"></i>
+                <h3>Receive</h3>
+                <p>Receive payments directly into your bank account offline.</p>
             </div>
             <div class="card">
-                <h3>Instant Transactions</h3>
-                <p>Never wait again—get instant confirmations and peace of mind with every transaction.</p>
+                <i class="fas fa-balance-scale"></i>
+                <h3>Check Balance</h3>
+                <p>Check your balance anytime, even offline.</p>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works">
-        <h2>How It Works</h2>
-        <div class="steps">
-            <div class="step">
-                <span class="step-number">1</span>
-                <p>Link your bank securely through the app.</p>
+    <section id="process-flow" class="section">
+        <h2>How KGPay Works</h2>
+        <p>Follow these steps to navigate KGPay’s UPI services:</p>
+        <div class="process-flow-container">
+            <div class="process-step">
+                <i class="fas fa-phone"></i>
+                <h3>1. Dial IVR</h3>
+                <p>Start by dialing the IVR number from your phone to access KGPay services.</p>
             </div>
-            <div class="step">
-                <span class="step-number">2</span>
-                <p>Generate a unique offline payment code.</p>
+            <div class="process-step">
+                <i class="fas fa-user-plus"></i>
+                <h3>2. Create Profile</h3>
+                <p>If you are a first-time user, you'll be guided to create a profile during your initial call.</p>
             </div>
-            <div class="step">
-                <span class="step-number">3</span>
-                <p>Complete transactions instantly, even offline.</p>
+            <div class="process-step">
+                <i class="fas fa-university"></i>
+                <h3>3. Account Setup</h3>
+                <p>Provide your bank name for linking your account and enabling transactions.</p>
             </div>
-        </div>
-        <!-- Another App Mockup (Optional) -->
-        <div class="app-mockup-container">
-            <img src="images/app-mockup.jpg" alt="App Mockup" class="app-mockup">
         </div>
     </section>
 
-    <!-- FAQs Section -->
-    <section id="faqs" class="faq">
+    <section id="demo" class="section">
+        <h2>How to Use KGPay</h2>
+        <div class="demo-carousel">
+            <div class="demo-step active">
+                <h3>Step 1: Dial IVR</h3>
+                <p>Dial the KGPay IVR number to begin.</p>
+            </div>
+            <div class="demo-step">
+                <h3>Step 2: Create Profile</h3>
+                <p>Provide basic details to create your profile.</p>
+            </div>
+            <div class="demo-step">
+                <h3>Step 3: Set Up UPI ID</h3>
+                <p>Receive your unique UPI ID in the format mobile.voice@psp.</p>
+            </div>
+        </div>
+    </section>
+
+  <section id="team" class="section">
+    <h2>Meet Our Team</h2>
+    <div class="team-members">
+        <div class="team-member">
+            <h3>Jahnavi Gupta</h3>
+            <p>Role: <em>Master of Documentation & Content Curation</em></p>
+            <p>Email: <a href="mailto:jahnavigupta007@gmail.com">jahnavigupta007@gmail.com</a></p>
+            <p>Phone: 9860344097</p>
+        </div>
+        <div class="team-member">
+            <h3>Devanshi Dadoo</h3>
+            <p>Role: <em>Creative Director of Website UI/UX & GitHub Strategist</em></p>
+            <p>Email: <a href="mailto:devanshidadoo12@gmail.com">devanshidadoo12@gmail.com</a></p>
+            <p>Phone: 8088438046</p>
+        </div>
+        <div class="team-member">
+            <h3>Apoorva Pandey</h3>
+            <p>Role: <em>Lead Architect of Frontend & Backend Development</em></p>
+            <p>Email: <a href="mailto:awepoorva@gmail.com">awepoorva@gmail.com</a></p>
+            <p>Phone: 6387926237</p>
+        </div>
+        <div class="team-member">
+            <h3>Kshitij Ramani</h3>
+            <p>Role: <em>Backend Code Engineer & System Innovator</em></p>
+            <p>Email: <a href="mailto:kshitij.ramani@gmail.com">kshitij.ramani@gmail.com</a></p>
+            <p>Phone: 7498042016</p>
+        </div>
+        <div class="team-member">
+            <h3>Anubhav Kumar</h3>
+            <p>Role: <em>Content Curator & Documentation Specialist</em></p>
+            <p>Email: <a href="mailto:anubhavkumar@gmail.com">anubhavkumar@gmail.com</a></p>
+            <p>Phone: [Phone Number Not Provided]</p>
+        </div>
+    </div>
+</section>
+
+
+    <section id="faq" class="section">
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
-            <h3>Is my data safe?</h3>
-            <p>Yes! We use bank-level encryption and never store your sensitive data on the device.</p>
+            <button class="faq-question">What is KGPay?</button>
+            <div class="faq-answer">
+                <p>KGPay is an offline UPI payment solution that allows users to make transactions without internet access.</p>
+            </div>
         </div>
         <div class="faq-item">
-            <h3>Can I use this app without the internet?</h3>
-            <p>Absolutely! Our offline payment feature ensures you can make payments anytime, anywhere.</p>
+            <button class="faq-question">How does it work?</button>
+            <div class="faq-answer">
+                <p>KGPay uses IVR technology to facilitate secure UPI transactions through a mobile phone.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer id="download" class="footer">
-        <h2>Get PayOffline Today</h2>
-        <div class="download-buttons">
-            <a href="#"><img src="images/appstore.png" alt="App Store"></a>
-            <a href="#"><img src="images/playstore.png" alt="Google Play"></a>
-        </div>
-        <p>© 2024 PayOffline. All rights reserved.</p>
+    <section id="newsletter" class="section">
+        <h2>Stay Updated</h2>
+        <form id="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="cta-btn">Subscribe</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 KGPay. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
