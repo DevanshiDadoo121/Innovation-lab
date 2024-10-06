@@ -215,49 +215,68 @@ header {
 }
 
 /* Team Section */
+/* Team Section */
 .team-members {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center; /* Center all team members */
     gap: 20px;
 }
 
 .team-member {
     background: white;
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    width: calc(50% - 40px);
-    margin-bottom: 25px;
-    text-align: left;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Limit the width of the team member cards */
+    margin-bottom: 20px;
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Add depth */
+}
+
+.team-photo {
+    width: 100px; /* Moderate size for the team photos */
+    height: 100px;
+    border-radius: 50%; /* Circular image */
+    margin-bottom: 15px;
+    object-fit: cover; /* Ensure the image doesn't stretch */
 }
 
 .team-member h3 {
     color: #007bff;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
-    font-weight: 600;
 }
 
 .team-member p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 5px;
 }
 
 .team-member a {
     color: #007bff;
     text-decoration: none;
-    font-weight: 500;
 }
 
 .team-member a:hover {
     text-decoration: underline;
 }
 
-.team-member:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column; /* Stack vertically on small screens */
+        align-items: center;    /* Center each card */
+    }
+
+    .team-member {
+        width: 90%; /* Expand width on mobile to fit nicely */
+    }
 }
 
 /* FAQ Section */
@@ -410,4 +429,3 @@ body.dark-mode footer {
     .card, .team-member {
         width: 90%;
     }
-}
