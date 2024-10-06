@@ -1,0 +1,526 @@
+/* General Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+header {
+    background: #007bff;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    padding: 0 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #007bff 30%, #00b3ff 100%);
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px;
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1.2s ease-in-out;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-btn {
+    background-color: #ff6600;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease-in-out, transform 0.3s;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.cta-btn:hover {
+    background-color: #e55b00;
+    transform: translateY(-5px);
+}
+/* How to Use KGPay Section */
+#how-to-use {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+}
+
+#how-to-use h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #007bff;
+}
+
+.accordion {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.accordion-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.3rem;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+.accordion-button i {
+    margin-right: 10px;
+}
+
+.accordion-button:hover {
+    background-color: #0056b3;
+}
+
+.accordion-content {
+    padding: 1rem;
+    background-color: #f1f1f1;
+    display: none;
+    border-radius: 0 0 8px 8px;
+    font-size: 1.1rem;
+    color: #555;
+    transition: max-height 0.5s ease;
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: #ff6600;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease-in-out, transform 0.3s;
+    margin-top: 30px;
+}
+
+.cta-btn:hover {
+    background-color: #e55b00;
+    transform: translateY(-5px);
+}
+
+/* Improved button hover effect */
+.accordion-item.active .accordion-content {
+    display: block;
+    max-height: 400px;
+    opacity: 1;
+}
+
+/* Centering content */
+#how-to-use .accordion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+}
+
+/* Sections */
+.section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.8rem;
+    color: #007bff;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.section p {
+    font-size: 1.3rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+/* Feature Cards */
+.feature-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    width: calc(33% - 40px);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card i {
+    font-size: 3.5rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Process Flow */
+.process-flow-container {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.process-step {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.process-step i {
+    font-size: 2.8rem;
+    color: #007bff;
+    margin-right: 20px;
+}
+
+.process-step h3 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.process-step p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Team Section */
+/* Team Section */
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center all team members */
+    gap: 20px;
+}
+
+.team-member {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Limit the width of the team member cards */
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Add depth */
+}
+
+.team-photo {
+    width: 100px; /* Moderate size for the team photos */
+    height: 100px;
+    border-radius: 50%; /* Circular image */
+    margin-bottom: 15px;
+    object-fit: cover; /* Ensure the image doesn't stretch */
+}
+
+.team-member h3 {
+    color: #007bff;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.team-member a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.team-member a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column; /* Stack vertically on small screens */
+        align-items: center;    /* Center each card */
+    }
+
+    .team-member {
+        width: 90%; /* Expand width on mobile to fit nicely */
+    }
+}
+
+/* FAQ Section */
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-question {
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #0056b3;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background-color: #f1f1f1;
+    padding: 0 15px;
+}
+
+.faq-question.active + .faq-answer {
+    max-height: 1000px;
+    padding: 15px;
+}
+
+/* Interactive Demo Section */
+.demo-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.demo-step {
+    display: none;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 8px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.demo-step.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Newsletter Section */
+#newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#newsletter-form input {
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    flex: 1;
+    font-weight: 500;
+}
+
+#newsletter-form button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#newsletter-form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #181818;
+    color: #f1f1f1;
+}
+
+body.dark-mode header {
+    background-color: #202020;
+}
+
+body.dark-mode .cta-btn {
+    background-color: #ff9800;
+}
+
+body.dark-mode .card, body.dark-mode .team-member, body.dark-mode .process-step {
+    background-color: #282828;
+}
+
+body.dark-mode footer {
+    background-color: #202020;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .feature-cards, .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card, .team-member {
+        width: 90%;
+    }
