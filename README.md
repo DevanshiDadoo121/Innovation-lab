@@ -54,6 +54,6 @@ Explore our latest updates and live demo at:
 ## **Notion**
 
 Explore additional resources and our project roadmap:  
-- [Notion Page]((https://jumpy-shock-06a.notion.site/KGPay-2e3c102c3e1441638b0d0df4cbdee782))
+- [Notion Page](https://jumpy-shock-06a.notion.site/KGPay-2e3c102c3e1441638b0d0df4cbdee782)
 
 ---
