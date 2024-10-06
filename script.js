@@ -1,31 +1,36 @@
-// Smooth Scroll for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+document.addEventListener('DOMContentLoaded', function () {
+    // Dark Mode Toggle
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        toggleButton.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const answer = button.nextElementSibling;
+            answer.style.maxHeight = answer.style.maxHeight ? null : `${answer.scrollHeight}px`;
+            button.classList.toggle('active');
         });
     });
-});
 
-// Add animation class when scrolling into view
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-        }
+    // Interactive Demo Carousel
+    const demoSteps = document.querySelectorAll('.demo-step');
+    let currentStep = 0;
+
+    function showNextStep() {
+        demoSteps[currentStep].classList.remove('active');
+        currentStep = (currentStep + 1) % demoSteps.length;
+        demoSteps[currentStep].classList.add('active');
+    }
+
+    setInterval(showNextStep, 3000);
+
+    // Newsletter Form Submission
+    const newsletterForm = document.getElementById('newsletter-form');
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for subscribing!');
     });
-});
-
-document.querySelectorAll('.card, .step').forEach(element => {
-    observer.observe(element);
-});
-
-// Floating animation for scroll indicator
-document.querySelector('.scroll-indicator').addEventListener('mouseover', () => {
-    document.querySelector('.scroll-indicator').style.color = '#ff6600';
-});
-
-document.querySelector('.scroll-indicator').addEventListener('mouseout', () => {
-    document.querySelector('.scroll-indicator').style.color = '#fff';
 });
