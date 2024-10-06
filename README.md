@@ -52,7 +52,7 @@ Explore our latest updates and live demo at:
 
 ---
 
-## **Resources**
+## **Notion**
 
 Explore additional resources and our project roadmap:  
 - [Notion Page](https://www.notion.so/invite/8fae418c1a90150d65b14fdfc2d09b3ca68e22f7)
