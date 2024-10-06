@@ -48,13 +48,12 @@ Apoorva plays a dual role, overseeing both the frontend and backend development 
 
 Explore our latest updates and live demo at:  
 [KGPay Official Website](https://devanshidadoo121.github.io/Innovation-lab/#get-started)  
-(Note: Replace the `#` with your actual website link once available.)
 
 ---
 
 ## **Notion**
 
 Explore additional resources and our project roadmap:  
-- [Notion Page](https://www.notion.so/invite/8fae418c1a90150d65b14fdfc2d09b3ca68e22f7)
+- [Notion Page]((https://jumpy-shock-06a.notion.site/KGPay-2e3c102c3e1441638b0d0df4cbdee782))
 
 ---
