@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KGPay - Secure Offline UPI Payments</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p+5lG2HPHJzVcY4H3Q1cJ4UlGgbRXJ7L45i7GZaf3ZL3QQY7x2LOX/5qXg4l8z6zVg6uf+Z+zvX4P2+NnSbP4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
@@ -14,153 +16,327 @@
             <div class="logo">KGPay</div>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
-                <li><a href="#process-flow">How It Works</a></li>
+                <li><a href="#how-to-use">How It Works</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#newsletter">Newsletter</a></li>
             </ul>
+            <button id="dark-mode-toggle" class="toggle-btn" aria-label="Toggle Dark Mode">🌙</button>
         </nav>
-        <button id="dark-mode-toggle" class="toggle-btn">🌙</button>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Secure Offline UPI Payments</h1>
-            <p>Make UPI transactions without the need for internet access.</p>
-            <a href="#features" class="cta-btn">Learn More</a>
-        </div>
-    </section>
-
-    <section id="features" class="section">
-        <h2>Key Features</h2>
-        <div class="feature-cards">
-            <div class="card">
-                <i class="fas fa-money-check-alt"></i>
-                <h3>Pay</h3>
-                <p>Make payments seamlessly, even without an internet connection.</p>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Secure Offline UPI Payments</h1>
+                <p>Make UPI transactions without the need for internet access.</p>
+                <a href="#features" class="cta-btn">Learn More</a>
             </div>
-            <div class="card">
-                <i class="fas fa-wallet"></i>
-                <h3>Receive</h3>
-                <p>Receive payments directly into your bank account offline.</p>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section">
+            <h2>Key Features</h2>
+            <div class="feature-cards">
+                <div class="card">
+                    <i class="fas fa-money-check-alt"></i>
+                    <h3>Pay</h3>
+                    <p>Make payments seamlessly, even without an internet connection.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-wallet"></i>
+                    <h3>Receive</h3>
+                    <p>Receive payments directly into your bank account offline.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Check Balance</h3>
+                    <p>Check your balance anytime, even offline.</p>
+                </div>
             </div>
-            <div class="card">
-                <i class="fas fa-balance-scale"></i>
-                <h3>Check Balance</h3>
-                <p>Check your balance anytime, even offline.</p>
+        </section>
+
+        <!-- How to Use Section -->
+        <section id="how-to-use" class="section">
+            <h2>How to Use KGPay</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button" aria-expanded="false">
+                        <i class="fas fa-phone"></i> Step 1: Dial IVR
+                        <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="accordion-content" aria-hidden="true">
+                        <p>Dial the KGPay IVR number to begin.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-button" aria-expanded="false">
+                        <i class="fas fa-user-plus"></i> Step 2: Create Profile
+                        <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="accordion-content" aria-hidden="true">
+                        <p>Provide basic details to create your profile.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-button" aria-expanded="false">
+                        <i class="fas fa-credit-card"></i> Step 3: Account Setup
+                        <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="accordion-content" aria-hidden="true">
+                        <p>Link your bank account to KGPay for easy transactions.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-button" aria-expanded="false">
+                        <i class="fas fa-check-circle"></i> Step 4: UPI Setup Complete
+                        <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="accordion-content" aria-hidden="true">
+                        <p>Once linked, your UPI setup is complete, and you're ready to use KGPay.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <section id="how-to-use" class="section">
-    <h2>How to Use KGPay</h2>
-    <div class="accordion">
-        <div class="accordion-item">
-            <button class="accordion-button">
-                <i class="fas fa-phone"></i> Step 1: Dial IVR
-            </button>
-            <div class="accordion-content">
-                <p>Dial the KGPay IVR number to begin.</p>
+            <a href="#newsletter" class="cta-btn">Get Started with KGPay</a>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="section">
+            <h2>Meet Our Team</h2>
+            <div class="team-members">
+                <!-- Team Member 1: Jahnavi Gupta -->
+                <div class="team-member">
+                    <img src="images/Jahnavi.png" alt="Jahnavi Gupta" class="team-photo" loading="lazy">
+                    <h3>Jahnavi Gupta</h3>
+                    <p>Master of Documentation & Content Curation</p>
+                    <p>Email: <a href="mailto:jahnavigupta007@gmail.com">jahnavigupta007@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+919860344097">9860344097</a></p>
+                    <button class="read-more-btn" aria-expanded="false" aria-controls="jahnavi-details">Read More</button>
+                    <div id="jahnavi-details" class="team-details" aria-hidden="true">
+                        <h4>Statement of Contribution</h4>
+                        <p><strong>Intellectual Property & Documentation:</strong></p>
+                        <ul>
+                            <li><strong>Provisional Patent Drafting:</strong>
+                                <ul>
+                                    <li>Conducted extensive research on UPI transaction laws in India.</li>
+                                    <li>Analyzed KGPay’s unique features for patent protection.</li>
+                                    <li>Drafted a comprehensive document detailing our innovation.</li>
+                                    <li>Performed patent searches to confirm KGPay’s novelty.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Team Leadership & Coordination:</strong>
+                                <ul>
+                                    <li>Oversaw team’s work ensuring efficient task completion.</li>
+                                    <li>Compiled team contributions for smooth workflow.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Documentation & Problem-Solving:</strong>
+                                <ul>
+                                    <li>Developed clear documentation summarizing KGPay’s purpose and functionality.</li>
+                                    <li>Presented a user-friendly guide explaining core features to potential users.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2: Devanshi Dadoo -->
+                <div class="team-member">
+                    <img src="images/Devanshi.png" alt="Devanshi Dadoo" class="team-photo" loading="lazy">
+                    <h3>Devanshi Dadoo</h3>
+                    <p>Creative Director of Website UI/UX & GitHub Strategist</p>
+                    <p>Email: <a href="mailto:devanshidadoo12@gmail.com">devanshidadoo12@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+918088438046">8088438046</a></p>
+                    <button class="read-more-btn" aria-expanded="false" aria-controls="devanshi-details">Read More</button>
+                    <div id="devanshi-details" class="team-details" aria-hidden="true">
+                        <h4>Statement of Contribution</h4>
+                        <p><strong>Team Leadership & Website Development:</strong></p>
+                        <ul>
+                            <li><strong>Leadership & Coordination:</strong>
+                                <ul>
+                                    <li>Facilitated open communication within the team.</li>
+                                    <li>Scheduled and led regular team meetings to stay on track.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Website Development:</strong>
+                                <ul>
+                                    <li>Designed and developed the CellaBella website.</li>
+                                    <li>Focused on usability and a clean layout.</li>
+                                    <li>Consistently updated the website with project news and features.</li>
+                                    <li>Implemented SEO-friendly practices to increase site visibility.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Task Management:</strong>
+                                <ul>
+                                    <li>Managed team’s workflow, delegating tasks and ensuring deadlines were met.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Team Support & Quality Assurance:</strong>
+                                <ul>
+                                    <li>Supported team members in overcoming challenges.</li>
+                                    <li>Conducted regular quality checks on the website and project output.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3: Anubhav Kumar -->
+                <div class="team-member">
+                    <img src="images/Anubhav.png" alt="Anubhav Kumar" class="team-photo" loading="lazy">
+                    <h3>Anubhav Kumar</h3>
+                    <p>Content Curator & Documentation Specialist</p>
+                    <p>Email: <a href="mailto:anubhavkumar@gmail.com">anubhavkumar@gmail.com</a></p>
+                    <button class="read-more-btn" aria-expanded="false" aria-controls="anubhav-details">Read More</button>
+                    <div id="anubhav-details" class="team-details" aria-hidden="true">
+                        <h4>Statement of Contribution</h4>
+                        <p><strong>Ideation, Technical Research & Collaboration Lead:</strong></p>
+                        <ul>
+                            <li><strong>Initial Ideation:</strong>
+                                <ul>
+                                    <li>Participated in brainstorming sessions to define core functionalities.</li>
+                                    <li>Researched digital payment solutions for offline UPI capabilities.</li>
+                                    <li>Brainstormed features catering to students and staff at IIT Kharagpur.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Technical Research:</strong>
+                                <ul>
+                                    <li>Investigated offline UPI payment systems and their adaptation.</li>
+                                    <li>Explored compatibility requirements for low-speed internet areas.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Collaboration with Insourced Coders:</strong>
+                                <ul>
+                                    <li>Served as liaison between team and insourced developers.</li>
+                                    <li>Communicated KGPay’s goals and technical needs to coders.</li>
+                                    <li>Provided ongoing feedback to align development with objectives.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Pitching & Presentation:</strong>
+                                <ul>
+                                    <li>Participated in pitching sessions outlining KGPay’s features and impact.</li>
+                                    <li>Developed presentations to communicate the app’s value proposition.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4: Kshitij Ramani -->
+                <div class="team-member">
+                    <img src="images/Kshitij.png" alt="Kshitij Ramani" class="team-photo" loading="lazy">
+                    <h3>Kshitij Ramani</h3>
+                    <p>Backend Code Engineer & System Innovator</p>
+                    <p>Email: <a href="mailto:kshitij.ramani@gmail.com">kshitij.ramani@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+917498042016">7498042016</a></p>
+                    <button class="read-more-btn" aria-expanded="false" aria-controls="kshitij-details">Read More</button>
+                    <div id="kshitij-details" class="team-details" aria-hidden="true">
+                        <h4>Statement of Contribution</h4>
+                        <p><strong>Market & Revenue Analysis, Pitch Deck Creation:</strong></p>
+                        <ul>
+                            <li><strong>Market Analysis:</strong>
+                                <ul>
+                                    <li>Conducted thorough analysis of the digital payment sector.</li>
+                                    <li>Identified competitors and assessed potential revenue streams.</li>
+                                    <li>Explored demand for offline UPI payments in areas with poor connectivity.</li>
+                                    <li>Investigated target audience preferences to shape app features.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Pitch Deck Development:</strong>
+                                <ul>
+                                    <li>Created a comprehensive pitch deck highlighting KGPay’s features and market potential.</li>
+                                    <li>Structured the deck to communicate solution, market opportunity, and scalability.</li>
+                                    <li>Used visuals and data to strengthen the case for KGPay’s growth potential.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Backend Research & Networking:</strong>
+                                <ul>
+                                    <li>Researched technical aspects for backend development.</li>
+                                    <li>Leveraged connections to explore insourcing backend development.</li>
+                                    <li>Collaborated with the team to find potential partners and efficient development solutions.</li>
+                                    <li>Provided insights on technical trends in backend development.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Product Expertise:</strong>
+                                <ul>
+                                    <li>Became the team’s product expert, providing insights and answering technical questions during presentations.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Team Member 5: Apoorva Pandey -->
+                <div class="team-member">
+                    <img src="images/Apoorva.png" alt="Apoorva Pandey" class="team-photo" loading="lazy">
+                    <h3>Apoorva Pandey</h3>
+                    <p>Lead Architect of Frontend & Backend Development</p>
+                    <p>Email: <a href="mailto:awepoorva@gmail.com">awepoorva@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+916387926237">6387926237</a></p>
+                    <button class="read-more-btn" aria-expanded="false" aria-controls="apoorva-details">Read More</button>
+                    <div id="apoorva-details" class="team-details" aria-hidden="true">
+                        <h4>Statement of Contribution</h4>
+                        <p><strong>Front-End Development & Product Pitching:</strong></p>
+                        <ul>
+                            <li><strong>User Interface Design:</strong>
+                                <ul>
+                                    <li>Created an intuitive and appealing interface for KGPay.</li>
+                                    <li>Designed a user-friendly layout ensuring streamlined payment processes.</li>
+                                    <li>Selected colors and visual elements aligning with KGPay’s brand image.</li>
+                                    <li>Optimized the app for both mobile and desktop platforms.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Project Tracking:</strong>
+                                <ul>
+                                    <li>Managed the team’s Notion page, documenting tasks, deadlines, and updates.</li>
+                                    <li>Maintained a resource library including guides and technical resources.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Pitching & Presentation:</strong>
+                                <ul>
+                                    <li>Developed and delivered presentations communicating KGPay’s value and features.</li>
+                                    <li>Tailored pitches to suit both technical and non-technical audiences.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="accordion-item">
-            <button class="accordion-button">
-                <i class="fas fa-user-plus"></i> Step 2: Create Profile
-            </button>
-            <div class="accordion-content">
-                <p>Provide basic details to create your profile.</p>
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">What is KGPay?</button>
+                <div class="faq-answer" aria-hidden="true">
+                    <p>KGPay is an offline UPI payment solution that allows users to make transactions without internet access.</p>
+                </div>
             </div>
-        </div>
-
-        <div class="accordion-item">
-            <button class="accordion-button">
-                <i class="fas fa-credit-card"></i> Step 3: Account Setup
-            </button>
-            <div class="accordion-content">
-                <p>Link your bank account to KGPay for easy transactions.</p>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">How does it work?</button>
+                <div class="faq-answer" aria-hidden="true">
+                    <p>KGPay uses IVR technology to facilitate secure UPI transactions through a mobile phone.</p>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="accordion-item">
-            <button class="accordion-button">
-                <i class="fas fa-check-circle"></i> Step 4: UPI Setup Complete
-            </button>
-            <div class="accordion-content">
-                <p>Once linked, your UPI setup is complete, and you're ready to use KGPay.</p>
-            </div>
-        </div>
-    </div>
+        <!-- Newsletter Section -->
+        <section id="newsletter" class="section">
+            <h2>Stay Updated</h2>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Enter your email" aria-label="Email Address" required>
+                <button type="submit" class="cta-btn">Subscribe</button>
+            </form>
+        </section>
+    </main>
 
-    <a href="#get-started" class="cta-btn">Get Started with KGPay</a>
-</section>
-
-
-  <section id="team" class="section">
-    <h2>Meet Our Team</h2>
-    <div class="team-members">
-        <div class="team-member">
-            <img src="images/Jahnavi.png" alt="Jahnavi Gupta" class="team-photo">
-            <h3>Jahnavi Gupta</h3>
-            <p>Role: <em>Master of Documentation & Content Curation</em></p>
-            <p>Email: <a href="mailto:jahnavigupta007@gmail.com">jahnavigupta007@gmail.com</a></p>
-            <p>Phone: 9860344097</p>
-        </div>
-        <div class="team-member">
-            <img src="images/Devanshi.png" alt="Devanshi Dadoo" class="team-photo">
-            <h3>Devanshi Dadoo</h3>
-            <p>Role: <em>Creative Director of Website UI/UX & GitHub Strategist</em></p>
-            <p>Email: <a href="mailto:devanshidadoo12@gmail.com">devanshidadoo12@gmail.com</a></p>
-            <p>Phone: 8088438046</p>
-        </div>
-        <div class="team-member">
-            <img src="images/Anubhav.png" alt="Anubhav Kumar" class="team-photo">
-            <h3>Anubhav Kumar</h3>
-            <p>Role: <em>Content Curator & Documentation Specialist</em></p>
-            <p>Email: <a href="mailto:anubhavkumar@gmail.com">anubhavkumar@gmail.com</a></p>
-        </div>
-        <div class="team-member">
-            <img src="images/Kshitij.png" alt="Kshitij Ramani" class="team-photo">
-            <h3>Kshitij Ramani</h3>
-            <p>Role: <em>Backend Code Engineer & System Innovator</em></p>
-            <p>Email: <a href="mailto:kshitij.ramani@gmail.com">kshitij.ramani@gmail.com</a></p>
-            <p>Phone: 7498042016</p>
-        </div>
-        <div class="team-member">
-            <img src="images/Apoorva.png" alt="Apoorva Pandey" class="team-photo">
-            <h3>Apoorva Pandey</h3>
-            <p>Role: <em>Lead Architect of Frontend & Backend Development</em></p>
-            <p>Email: <a href="mailto:awepoorva@gmail.com">awepoorva@gmail.com</a></p>
-            <p>Phone: 6387926237</p>
-        </div>
-    </div>
-</section>
-
-
-    <section id="faq" class="section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <button class="faq-question">What is KGPay?</button>
-            <div class="faq-answer">
-                <p>KGPay is an offline UPI payment solution that allows users to make transactions without internet access.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">How does it work?</button>
-            <div class="faq-answer">
-                <p>KGPay uses IVR technology to facilitate secure UPI transactions through a mobile phone.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="newsletter" class="section">
-        <h2>Stay Updated</h2>
-        <form id="newsletter-form">
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit" class="cta-btn">Subscribe</button>
-        </form>
-    </section>
-
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 KGPay. All Rights Reserved.</p>
     </footer>
