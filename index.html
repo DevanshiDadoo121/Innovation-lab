@@ -6,7 +6,7 @@
     <title>KGPay - Secure Offline UPI Payments</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
+    <!-- Font Awesome for Icons (Optional for other icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p+5lG2HPHJzVcY4H3Q1cJ4UlGgbRXJ7L45i7GZaf3ZL3QQY7x2LOX/5qXg4l8z6zVg6uf+Z+zvX4P2+NnSbP4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Link to External CSS -->
     <link rel="stylesheet" href="styles.css">
@@ -27,7 +27,7 @@
             </ul>
             <!-- Hamburger Button (Visible on Mobile) -->
             <button class="hamburger" id="hamburger" aria-label="Open Navigation Menu" aria-controls="side-menu" aria-expanded="false">
-                <i class="fas fa-bars"></i>
+                &#9776; <!-- Unicode for hamburger icon -->
             </button>
             <!-- Dark Mode Toggle -->
             <button id="dark-mode-toggle" class="toggle-btn" aria-label="Toggle Dark Mode">🌙</button>
@@ -171,7 +171,6 @@
                     </div>
                 </div>
                 
-                <!-- Repeat similar blocks for other team members -->
                 <!-- Team Member 2: Devanshi Dadoo -->
                 <div class="team-member">
                     <img src="images/Devanshi.png" alt="Devanshi Dadoo" class="team-photo" loading="lazy">
@@ -213,7 +212,107 @@
                     </div>
                 </div>
                 
-                <!-- Add other team members similarly -->
+                <!-- Team Member 3: Anubhav Sharma -->
+                <div class="team-member">
+                    <img src="images/Anubhav.png" alt="Anubhav Sharma" class="team-photo" loading="lazy">
+                    <h3>Anubhav Sharma</h3>
+                    <p>Lead Developer & Backend Engineer</p>
+                    <p>Email: <a href="mailto:anubhav.sharma@example.com">anubhav.sharma@example.com</a></p>
+                    <p>Phone: <a href="tel:+919876543210">9876543210</a></p>
+                    <button class="read-more-btn" aria-expanded="false" aria-controls="anubhav-details">Read More</button>
+                    <div id="anubhav-details" class="team-details" aria-hidden="true">
+                        <h4>Statement of Contribution</h4>
+                        <p><strong>Backend Development & System Architecture:</strong></p>
+                        <ul>
+                            <li><strong>System Design:</strong>
+                                <ul>
+                                    <li>Architected the backend infrastructure for secure UPI transactions.</li>
+                                    <li>Ensured scalability and reliability of the payment system.</li>
+                                </ul>
+                            </li>
+                            <li><strong>API Development:</strong>
+                                <ul>
+                                    <li>Developed RESTful APIs for seamless communication between frontend and backend.</li>
+                                    <li>Implemented authentication and authorization mechanisms.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Database Management:</strong>
+                                <ul>
+                                    <li>Designed and managed the database schema for user data and transactions.</li>
+                                    <li>Ensured data integrity and security through encryption and regular backups.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4: Kshitij Verma -->
+                <div class="team-member">
+                    <img src="images/Kshitij.png" alt="Kshitij Verma" class="team-photo" loading="lazy">
+                    <h3>Kshitij Verma</h3>
+                    <p>Frontend Developer & UI Specialist</p>
+                    <p>Email: <a href="mailto:kshitij.verma@example.com">kshitij.verma@example.com</a></p>
+                    <p>Phone: <a href="tel:+919812345678">9812345678</a></p>
+                    <button class="read-more-btn" aria-expanded="false" aria-controls="kshitij-details">Read More</button>
+                    <div id="kshitij-details" class="team-details" aria-hidden="true">
+                        <h4>Statement of Contribution</h4>
+                        <p><strong>Frontend Development & UI Design:</strong></p>
+                        <ul>
+                            <li><strong>UI Design:</strong>
+                                <ul>
+                                    <li>Created intuitive and user-friendly interfaces for KGPay.</li>
+                                    <li>Ensured consistency in design across all pages.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Responsive Design:</strong>
+                                <ul>
+                                    <li>Implemented responsive design techniques to ensure functionality across devices.</li>
+                                    <li>Optimized layouts for various screen sizes and orientations.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Performance Optimization:</strong>
+                                <ul>
+                                    <li>Minimized load times by optimizing images and scripts.</li>
+                                    <li>Ensured smooth animations and transitions for enhanced user experience.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Team Member 5: Apoorva Mehta -->
+                <div class="team-member">
+                    <img src="images/Apoorva.png" alt="Apoorva Mehta" class="team-photo" loading="lazy">
+                    <h3>Apoorva Mehta</h3>
+                    <p>Quality Assurance & Testing Lead</p>
+                    <p>Email: <a href="mailto:apoorva.mehta@example.com">apoorva.mehta@example.com</a></p>
+                    <p>Phone: <a href="tel:+919812345679">9812345679</a></p>
+                    <button class="read-more-btn" aria-expanded="false" aria-controls="apoorva-details">Read More</button>
+                    <div id="apoorva-details" class="team-details" aria-hidden="true">
+                        <h4>Statement of Contribution</h4>
+                        <p><strong>Quality Assurance & Testing:</strong></p>
+                        <ul>
+                            <li><strong>Testing Strategy:</strong>
+                                <ul>
+                                    <li>Developed comprehensive testing protocols to ensure product reliability.</li>
+                                    <li>Implemented automated testing frameworks for efficient quality checks.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Bug Tracking & Resolution:</strong>
+                                <ul>
+                                    <li>Identified and documented bugs and issues during the development cycle.</li>
+                                    <li>Collaborated with developers to ensure timely resolution of identified problems.</li>
+                                </ul>
+                            </li>
+                            <li><strong>User Acceptance Testing:</strong>
+                                <ul>
+                                    <li>Conducted user acceptance testing to validate product functionality and usability.</li>
+                                    <li>Gathered feedback and worked with the team to incorporate necessary improvements.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -232,6 +331,7 @@
                     <p>KGPay uses IVR technology to facilitate secure UPI transactions through a mobile phone.</p>
                 </div>
             </div>
+            <!-- Add more FAQ items as needed -->
         </section>
 
         <!-- Newsletter Section -->
