@@ -11,6 +11,7 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <nav class="navbar">
             <div class="logo">KGPay</div>
@@ -21,9 +22,31 @@
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#newsletter">Newsletter</a></li>
             </ul>
+            <!-- Hamburger Button (Visible on Mobile) -->
+            <button class="hamburger" id="hamburger" aria-label="Open Navigation Menu" aria-controls="side-menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Dark Mode Toggle -->
             <button id="dark-mode-toggle" class="toggle-btn" aria-label="Toggle Dark Mode">🌙</button>
         </nav>
     </header>
+
+    <!-- Side Menu (Drawer) -->
+    <aside class="side-menu" id="side-menu" aria-hidden="true">
+        <button class="close-btn" id="close-btn" aria-label="Close Navigation Menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="side-nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-to-use">How It Works</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
+        </ul>
+    </aside>
+
+    <!-- Overlay (Visible when Side Menu is Open) -->
+    <div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
 
     <main>
         <!-- Hero Section -->
@@ -165,7 +188,7 @@
                             </li>
                             <li><strong>Website Development:</strong>
                                 <ul>
-                                    <li>Designed and developed the CellaBella website.</li>
+                                    <li>Designed and developed the KGPay website.</li>
                                     <li>Focused on usability and a clean layout.</li>
                                     <li>Consistently updated the website with project news and features.</li>
                                     <li>Implemented SEO-friendly practices to increase site visibility.</li>
