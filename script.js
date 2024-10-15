@@ -1,135 +1,18 @@
+// Wait for the DOM to fully load before executing scripts
 document.addEventListener('DOMContentLoaded', function () {
-    /* --- Dark Mode Toggle --- */
-    const toggleButton = document.getElementById('dark-mode-toggle');
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-    // Initialize dark mode based on user preference or local storage
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
-        document.body.classList.add('dark-mode');
-        toggleButton.textContent = '☀️';
-    } else {
-        toggleButton.textContent = '🌙';
-    }
-
-    toggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        const isDarkMode = document.body.classList.contains('dark-mode');
-        toggleButton.textContent = isDarkMode ? '☀️' : '🌙';
-        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-    });
-
-    /* --- FAQ Accordion --- */
-    const faqButtons = document.querySelectorAll('.faq-question');
-    faqButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const isActive = button.classList.contains('active');
-            // Close all FAQs
-            faqButtons.forEach(btn => {
-                btn.classList.remove('active');
-                btn.setAttribute('aria-expanded', 'false');
-                btn.nextElementSibling.style.maxHeight = null;
-                btn.nextElementSibling.setAttribute('aria-hidden', 'true');
-            });
-            // Toggle current FAQ
-            if (!isActive) {
-                button.classList.add('active');
-                button.setAttribute('aria-expanded', 'true');
-                const answer = button.nextElementSibling;
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-                answer.setAttribute('aria-hidden', 'false');
-            }
-        });
-    });
-
-    /* --- Accordion in How to Use Section --- */
-    const accordionButtons = document.querySelectorAll('.accordion-button');
-    accordionButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const item = button.parentElement;
-            const isActive = item.classList.contains('active');
-
-            // Close all accordion items
-            document.querySelectorAll('.accordion-item').forEach(i => {
-                i.classList.remove('active');
-                i.querySelector('.accordion-button').setAttribute('aria-expanded', 'false');
-                i.querySelector('.accordion-content').style.maxHeight = null;
-                i.querySelector('.accordion-content').setAttribute('aria-hidden', 'true');
-            });
-
-            // Toggle current accordion item
-            if (!isActive) {
-                item.classList.add('active');
-                button.setAttribute('aria-expanded', 'true');
-                const content = item.querySelector('.accordion-content');
-                content.style.maxHeight = content.scrollHeight + 'px';
-                content.setAttribute('aria-hidden', 'false');
-            }
-        });
-    });
-
-    /* --- Newsletter Form Submission --- */
-    const newsletterForm = document.getElementById('newsletter-form');
-    newsletterForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const emailInput = newsletterForm.querySelector('input[type="email"]');
-        const email = emailInput.value.trim();
-        if (validateEmail(email)) {
-            alert('Thank you for subscribing!');
-            emailInput.value = '';
-        } else {
-            alert('Please enter a valid email address.');
-        }
-    });
-
-    // Email Validation Function
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    }
-
-    /* --- Smooth Scrolling for Internal Links --- */
-    const internalLinks = document.querySelectorAll('a[href^="#"]');
-    internalLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const target = document.getElementById(targetId);
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - parseInt(getComputedStyle(document.body).getPropertyValue('--header-height')),
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    /* --- Team Members Read More Functionality --- */
-    const readMoreButtons = document.querySelectorAll('.read-more-btn');
-
-    readMoreButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const teamMember = button.closest('.team-member');
-            const details = teamMember.querySelector('.team-details');
-            const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
-            // Toggle the active class
-            teamMember.classList.toggle('active');
-
-            // Update ARIA attributes
-            button.setAttribute('aria-expanded', !isExpanded);
-            details.setAttribute('aria-hidden', isExpanded);
-        });
-    });
-
-    /* --- Side Menu Functionality --- */
+    /* ========================================================================
+       1. Hamburger Menu Functionality
+       ======================================================================== */
+    
+    // Select DOM elements related to the hamburger menu
     const hamburger = document.getElementById('hamburger');
     const sideMenu = document.getElementById('side-menu');
     const closeBtn = document.getElementById('close-btn');
     const overlay = document.getElementById('overlay');
     const sideNavLinks = document.querySelectorAll('.side-nav-links a');
 
-    // Function to open side menu
+    // Function to open the side menu
     function openSideMenu() {
         sideMenu.classList.add('active');
         overlay.classList.add('active');
@@ -139,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.style.overflow = 'hidden';
     }
 
-    // Function to close side menu
-    function closeSideMenuFunc() {
+    // Function to close the side menu
+    function closeSideMenu() {
         sideMenu.classList.remove('active');
         overlay.classList.remove('active');
         hamburger.setAttribute('aria-expanded', 'false');
@@ -149,36 +32,166 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.style.overflow = '';
     }
 
-    // Event listener for hamburger button
+    // Event listener for hamburger button to open the side menu
     if (hamburger) {
         hamburger.addEventListener('click', openSideMenu);
     } else {
         console.error('Hamburger button not found!');
     }
 
-    // Event listener for close button
+    // Event listener for close button inside the side menu
     if (closeBtn) {
-        closeBtn.addEventListener('click', closeSideMenuFunc);
+        closeBtn.addEventListener('click', closeSideMenu);
     } else {
         console.error('Close button not found!');
     }
 
-    // Event listener for overlay click
+    // Event listener for overlay click to close the side menu
     if (overlay) {
-        overlay.addEventListener('click', closeSideMenuFunc);
+        overlay.addEventListener('click', closeSideMenu);
     } else {
         console.error('Overlay not found!');
     }
 
-    // Event listeners for side nav links to close menu upon clicking
+    // Event listeners for each navigation link inside the side menu to close the menu upon clicking
     sideNavLinks.forEach(link => {
-        link.addEventListener('click', closeSideMenuFunc);
+        link.addEventListener('click', closeSideMenu);
     });
 
     // Optional: Close side menu with 'Escape' key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && sideMenu.classList.contains('active')) {
-            closeSideMenuFunc();
+            closeSideMenu();
         }
     });
+
+    /* ========================================================================
+       2. Dark Mode Toggle Functionality
+       ======================================================================== */
+
+    // Select the dark mode toggle button
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+    // Function to enable dark mode
+    function enableDarkMode() {
+        document.body.classList.add('dark-mode');
+        darkModeToggle.textContent = '☀️'; // Change icon to sun
+        localStorage.setItem('theme', 'dark');
+    }
+
+    // Function to disable dark mode
+    function disableDarkMode() {
+        document.body.classList.remove('dark-mode');
+        darkModeToggle.textContent = '🌙'; // Change icon to moon
+        localStorage.setItem('theme', 'light');
+    }
+
+    // Function to toggle dark mode
+    function toggleDarkMode() {
+        if (document.body.classList.contains('dark-mode')) {
+            disableDarkMode();
+        } else {
+            enableDarkMode();
+        }
+    }
+
+    // Event listener for dark mode toggle button
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+    } else {
+        console.error('Dark mode toggle button not found!');
+    }
+
+    // Check localStorage for theme preference on initial load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        enableDarkMode();
+    } else {
+        disableDarkMode();
+    }
+
+    /* ========================================================================
+       3. FAQ Accordion Functionality
+       ======================================================================== */
+
+    // Select all FAQ question buttons
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    // Function to toggle FAQ answer
+    function toggleFAQ(e) {
+        const question = e.currentTarget;
+        const answer = question.nextElementSibling;
+
+        // Toggle ARIA attributes for accessibility
+        const isExpanded = question.getAttribute('aria-expanded') === 'true';
+        question.setAttribute('aria-expanded', !isExpanded);
+        answer.setAttribute('aria-hidden', isExpanded);
+
+        // Toggle the active class for styling
+        question.classList.toggle('active');
+    }
+
+    // Attach event listeners to each FAQ question
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', toggleFAQ);
+    });
+
+    /* ========================================================================
+       4. Team Members "Read More" Functionality
+       ======================================================================== */
+
+    // Select all "Read More" buttons within team members
+    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+
+    // Function to toggle team member details
+    function toggleTeamDetails(e) {
+        const button = e.currentTarget;
+        const teamMember = button.closest('.team-member');
+        const details = teamMember.querySelector('.team-details');
+
+        // Toggle ARIA attributes for accessibility
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', !isExpanded);
+        details.setAttribute('aria-hidden', isExpanded);
+
+        // Toggle the active class for styling
+        teamMember.classList.toggle('active');
+    }
+
+    // Attach event listeners to each "Read More" button
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', toggleTeamDetails);
+    });
+
+    /* ========================================================================
+       5. Newsletter Form Submission
+       ======================================================================== */
+
+    // Select the newsletter form
+    const newsletterForm = document.getElementById('newsletter-form');
+
+    // Function to handle newsletter form submission
+    function handleNewsletterSubmit(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        const emailInput = newsletterForm.querySelector('input[type="email"]');
+        const email = emailInput.value.trim();
+
+        // Basic email validation using regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailRegex.test(email)) {
+            alert('Thank you for subscribing to our newsletter!');
+            newsletterForm.reset(); // Reset the form
+        } else {
+            alert('Please enter a valid email address.');
+        }
+    }
+
+    // Attach event listener to the newsletter form
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', handleNewsletterSubmit);
+    } else {
+        console.error('Newsletter form not found!');
+    }
+
 });
