@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Dark Mode Toggle
+    /* --- Dark Mode Toggle --- */
     const toggleButton = document.getElementById('dark-mode-toggle');
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     });
 
-    // FAQ Accordion
+    /* --- FAQ Accordion --- */
     const faqButtons = document.querySelectorAll('.faq-question');
     faqButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Accordion in How to Use Section
+    /* --- Accordion in How to Use Section --- */
     const accordionButtons = document.querySelectorAll('.accordion-button');
     accordionButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Newsletter Form Submission
+    /* --- Newsletter Form Submission --- */
     const newsletterForm = document.getElementById('newsletter-form');
     newsletterForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return re.test(email);
     }
 
-    // Smooth Scrolling for Internal Links
+    /* --- Smooth Scrolling for Internal Links --- */
     const internalLinks = document.querySelectorAll('a[href^="#"]');
     internalLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Team Members Read More Functionality
+    /* --- Team Members Read More Functionality --- */
     const readMoreButtons = document.querySelectorAll('.read-more-btn');
 
     readMoreButtons.forEach(button => {
@@ -150,13 +150,25 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Event listener for hamburger button
-    hamburger.addEventListener('click', openSideMenu);
+    if (hamburger) {
+        hamburger.addEventListener('click', openSideMenu);
+    } else {
+        console.error('Hamburger button not found!');
+    }
 
     // Event listener for close button
-    closeBtn.addEventListener('click', closeSideMenuFunc);
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeSideMenuFunc);
+    } else {
+        console.error('Close button not found!');
+    }
 
     // Event listener for overlay click
-    overlay.addEventListener('click', closeSideMenuFunc);
+    if (overlay) {
+        overlay.addEventListener('click', closeSideMenuFunc);
+    } else {
+        console.error('Overlay not found!');
+    }
 
     // Event listeners for side nav links to close menu upon clicking
     sideNavLinks.forEach(link => {
