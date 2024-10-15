@@ -135,6 +135,8 @@ document.addEventListener('DOMContentLoaded', function () {
         overlay.classList.add('active');
         hamburger.setAttribute('aria-expanded', 'true');
         sideMenu.setAttribute('aria-hidden', 'false');
+        // Disable body scroll when menu is open
+        document.body.style.overflow = 'hidden';
     }
 
     // Function to close side menu
@@ -143,6 +145,8 @@ document.addEventListener('DOMContentLoaded', function () {
         overlay.classList.remove('active');
         hamburger.setAttribute('aria-expanded', 'false');
         sideMenu.setAttribute('aria-hidden', 'true');
+        // Enable body scroll when menu is closed
+        document.body.style.overflow = '';
     }
 
     // Event listener for hamburger button
