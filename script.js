@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const target = document.getElementById(targetId);
             if (target) {
                 window.scrollTo({
-                    top: target.offsetTop - 60, // Adjust for fixed header
+                    top: target.offsetTop - parseInt(getComputedStyle(document.body).getPropertyValue('--header-height')),
                     behavior: 'smooth'
                 });
             }
@@ -120,5 +120,49 @@ document.addEventListener('DOMContentLoaded', function () {
             button.setAttribute('aria-expanded', !isExpanded);
             details.setAttribute('aria-hidden', isExpanded);
         });
+    });
+
+    /* --- Side Menu Functionality --- */
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('side-menu');
+    const closeBtn = document.getElementById('close-btn');
+    const overlay = document.getElementById('overlay');
+    const sideNavLinks = document.querySelectorAll('.side-nav-links a');
+
+    // Function to open side menu
+    function openSideMenu() {
+        sideMenu.classList.add('active');
+        overlay.classList.add('active');
+        hamburger.setAttribute('aria-expanded', 'true');
+        sideMenu.setAttribute('aria-hidden', 'false');
+    }
+
+    // Function to close side menu
+    function closeSideMenuFunc() {
+        sideMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        sideMenu.setAttribute('aria-hidden', 'true');
+    }
+
+    // Event listener for hamburger button
+    hamburger.addEventListener('click', openSideMenu);
+
+    // Event listener for close button
+    closeBtn.addEventListener('click', closeSideMenuFunc);
+
+    // Event listener for overlay click
+    overlay.addEventListener('click', closeSideMenuFunc);
+
+    // Event listeners for side nav links to close menu upon clicking
+    sideNavLinks.forEach(link => {
+        link.addEventListener('click', closeSideMenuFunc);
+    });
+
+    // Optional: Close side menu with 'Escape' key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sideMenu.classList.contains('active')) {
+            closeSideMenuFunc();
+        }
     });
 });
